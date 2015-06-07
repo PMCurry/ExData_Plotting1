@@ -7,6 +7,7 @@ data = subset(powerfile, subset = (Date >= "2007-02-01" & Date <= "2007-02-02"))
 datetime <- paste(as.Date(data$Date), data$Time)
 data$Datetime <- as.POSIXct(datetime)
 ##Plot ALL the things
+par(mfrow=c(2,2))
 with(data, {
   plot(Global_active_power~Datetime, type="l", 
        ylab="Global Active Power", xlab="")
